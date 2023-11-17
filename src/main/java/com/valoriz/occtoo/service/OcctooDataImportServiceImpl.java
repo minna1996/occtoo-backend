@@ -38,7 +38,7 @@ public class OcctooDataImportServiceImpl implements OcctooDataImportService {
     public void importDataToOcctoo() {
         try {
             String accessToken = tokenGenerator.getToken();
-            String filePath = "C:\\Users\\Minna\\Desktop\\Occtoo\\price.json";
+            String filePath = "C:\\Users\\Minna\\Desktop\\Occtoo\\Inventory.json";
             String dataSource= OcctooConfiguration.DATA_SOURCE;
             List<Entity> entities = new ArrayList<>();
             jsonObjectReader.processDataFromJson(accessToken, filePath, entities);
