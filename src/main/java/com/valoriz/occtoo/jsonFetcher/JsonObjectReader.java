@@ -20,6 +20,7 @@ public class JsonObjectReader {
 
     public void processDataFromJson(String accessToken, String filePath, List<Entity> entities) {
         try {
+            String attribute ="inventory";
             ObjectMapper objectMapper = new ObjectMapper();
             File jsonFile = new File(filePath);
             if (!jsonFile.exists()) {
@@ -27,7 +28,7 @@ public class JsonObjectReader {
                 return;
             }
             JsonNode jsonNode = objectMapper.readTree(jsonFile);
-            JsonNode dataNode = jsonNode.get("price");
+            JsonNode dataNode = jsonNode.get(attribute);
             if (dataNode != null && dataNode.isArray()) {
                 List<String> dataList = convertJsonNodeToList(dataNode);
                 if (!dataList.isEmpty()) {
